@@ -8,7 +8,7 @@ const todoslice = createSlice({
     name: 'todos',
     initialState,
     reducers: {
-        savetodo:(state,action)=>{
+        savetodo:(state,action)=>{//setTodoList
             state.todolist.push(action.payload);
         }
     }
