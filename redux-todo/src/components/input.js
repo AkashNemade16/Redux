@@ -1,14 +1,14 @@
 import React,{useState} from 'react'
 import './input.css'; 
 import {useDispatch} from 'react-redux';
-import {savetodo} from '../features/todoslice'
+import {saveTodo} from '../features/todoslice'
 
 const Input = () => {
     const [input,setInput] = useState('');
     const dispatch = useDispatch()//to contact with redux
     const addTodo = () =>{
         console.log(`Adding${input}`)
-        dispatch(savetodo({
+        dispatch(saveTodo({
             items:input,
             done:false,
             id:Date.now()

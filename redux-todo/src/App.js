@@ -2,22 +2,17 @@ import React from 'react';
 import './App.css';
 import Input from './components/input';
 import TodoItem from './components/todoItem';
+import {useSelector} from 'react-redux';
+import {selectTodoList} from './features/todoslice';
 
-const todolist = [{
-  item:'todo',
-  done:false,
-  id:546757
-},{
-  item: 'todo2',
-  done: false,
-  id: 57428
-}]
+
 
 function App() {
+  const todolist = useSelector(selectTodoList);
   return (
     <div className="app">
-      <div className="AppContainer">
-          <div className="app_todoContainer">
+      <div className="app__container">
+          <div className="app__todoContainer">
               {
                   todolist.map(item => (
                     <TodoItem
@@ -27,8 +22,9 @@ function App() {
                   ))     
               }
           </div>  
+        <Input />
       </div>
-      <Input/>
+      
     </div>
   );
 }
